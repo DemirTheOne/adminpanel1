@@ -1,0 +1,11 @@
+Bu klasor hazir bir Forge 1.20.1 (47.3.0) projesidir. MDK indirmene gerek yok.
+
+YONTEM 1 - Bilgisayarinda (JDK 17 gerekli):
+  Windows:    .\gradlew.bat build
+  Mac/Linux:  ./gradlew build
+  Sonuc: build/libs/adminpanel-1.0.0.jar  -> host'un mods klasorune at.
+
+YONTEM 2 - Bilgisayara hicbir sey kurmadan (GitHub Actions):
+  1) github.com'da ucretsiz hesapla yeni bir repo ac.
+  2) Bu klasorun icindekileri (.github klasoru dahil) repo'ya yukle.
+  3) Actions sekmesi -> "Build mod" -> bitince Artifacts -> adminpanel-jar indir.

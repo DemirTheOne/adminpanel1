@@ -1,0 +1,38 @@
+ADMIN PANEL MODU (Forge 1.20.1)  -  kaynak kod
+================================================
+NOT: Bu kodu yazarken derleyip oyunda deneyemedim. Sozdizimi kontrol edildi ama Forge ile ilk
+derlemede kucuk bir hata cikabilir. Cikarsa hata mesajini aynen gonder, duzeltelim.
+
+DERLEME (bir kere)
+1) JDK 17 kur (ornek: Eclipse Temurin 17).
+2) files.minecraftforge.net  ->  Minecraft 1.20.1  ->  "Mdk" indir (47.x), bir klasore cikar.
+3) MDK klasorundeki  src  klasorunu SIL, bu zip'teki  src  klasorunu oraya koy.
+4) MDK'daki gradle.properties dosyasini ac, su satirlari boyle yap:
+       mod_id=adminpanel
+       mod_name=Admin Panel
+       mod_version=1.0.0
+       mod_group_id=com.thexyro.adminpanel
+5) O klasorde terminal ac:
+       Windows:  .\gradlew.bat build
+       Mac/Linux: ./gradlew build
+   (ilk seferde dosyalari indirir, 5-10 dakika surebilir)
+6) build/libs/adminpanel-1.0.0.jar dosyasini host'un mods klasorune at.
+
+KULLANIM
+- Varsayilan yetkili sadece MC nick: TheXyro0
+- Panel:  sag Shift (panelden degistirilebilir)  veya  /adminpanel  (/cs2ap  ve  /cs2adminpanel ayni)
+- Yetki ver:  /adminpanel give op <isim>        Yetkiyi al:  /adminpanel un op <isim>
+  (sadece TheXyro0 kullanabilir; yetkili olan kisinin de modu kurmasi gerekir cunku panel istemci tarafinda acilir)
+- SpinBot ekrani:
+    sol  : sunucudaki oyuncular, tikla = hedef sec
+    sag  : SpinBot ac/kapat, hiz cubugu 1-100, "Ac/Kapat tusu" ve "Panel tusu" ayari
+    tus  : butona tikla, sonra bir tusa bas (ESC iptal, DEL tusu siler)
+- Kendi icin hizli ac/kapa: panelden "Ac/Kapat tusu"nu ata, sonra o tusa bas.
+
+NASIL CALISIYOR
+- Senin gercek bakis yonun HIC degismez: birinci sahis kameran sabit, nisan alip vurabilirsin.
+- Sunucu sadece DIGER oyunculara "bu oyuncunun modeli donuyor" diye sahte rotasyon paketi yollar.
+- Ucuncu sahis kamerada kendi modelinin dondugunu sen de gorursun (istemci tarafi cizim).
+- Hiz 100 = tick basina 150 derece. SpinManager.java icindeki DEG_PER_SPEED ile ayarlanir.
+- Spin verilen oyuncunun modu kurmasi gerekmez; digerleri donusu modsuz de gorur.
+- Mod sadece host'ta kuruluysa modsuz arkadaslar girebilsin diye ayarlandi (bunu da denemedim).
