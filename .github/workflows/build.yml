@@ -1,19 +1,27 @@
-name: Build mod
+name: build
 on:
   push:
   workflow_dispatch:
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: checkout repository
+        uses: actions/checkout@v6
+      - name: setup jdk
+        uses: actions/setup-java@v5
         with:
-          distribution: temurin
-          java-version: 17
-      - run: chmod +x gradlew && ./gradlew build
-        working-directory: adminpanel_forge_1.20.1_project
-      - uses: actions/upload-artifact@v4
+          java-version: '25'
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build
+        run: ./gradlew build
+      - name: capture build artifacts
+        uses: actions/upload-artifact@v7
         with:
-          name: adminpanel-jar
-          path: adminpanel_forge_1.20.1_project/build/libs/*.jar
+          name: screenmod-jar
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
