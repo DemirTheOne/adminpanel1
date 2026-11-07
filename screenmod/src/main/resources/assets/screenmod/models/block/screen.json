@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "screenmod:block/screen_front",
+    "side": "screenmod:block/screen_side"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "south": {
+          "texture": "#side",
+          "cullface": "south"
+        },
+        "east": {
+          "texture": "#side",
+          "cullface": "east"
+        },
+        "west": {
+          "texture": "#side",
+          "cullface": "west"
+        },
+        "up": {
+          "texture": "#side",
+          "cullface": "up"
+        },
+        "down": {
+          "texture": "#side",
+          "cullface": "down"
+        },
+        "north": {
+          "texture": "#front",
+          "cullface": "north"
+        }
+      }
+    }
+  ]
+}

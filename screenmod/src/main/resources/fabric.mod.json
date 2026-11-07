@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "screenmod",
+	"version": "${version}",
+	"name": "Screen Mod",
+	"description": "Adds a Screen block that can display images.",
+	"authors": [
+		"TheXyro0"
+	],
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.thexyro.screenmod.ScreenMod"
+		],
+		"client": [
+			"com.thexyro.screenmod.client.ScreenModClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
